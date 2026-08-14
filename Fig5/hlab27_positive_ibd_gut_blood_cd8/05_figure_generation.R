@@ -37,14 +37,6 @@ p1 <- DotPlot(d, group.by = "celltype1",
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))
 ggsave(plot=p1, filename="plot/cluster_markers.pdf", width=10,height=2.25,units="in")
 
-
-# UMAPs of type 17 features and IL-26
-t17 <- c("IL22", "RORC", "IL17A", "IL23R", "IL26")
-for (i in t17) {
-  p <- FeaturePlot(d, features = i, order = T)
-  ggsave(plot=p, filename = paste0("plot/umap_",i,".pdf"), width=3.2, height=2.9)
-}
-
 # UMAP by tissue (non-granular)
 DimPlot(d, group.by = "tissue_merged", cols = c("Blood"="darkred", "Gut" = "#5790C1"))
 ggsave(filename = "plot/umap_tissue.pdf", width=4, height=2.9)
