@@ -28,12 +28,10 @@ all_samples_beta <- dplyr::bind_rows(all_samples_beta)
 all_samples_beta$pathogenic1 <- ifelse(grepl(pathogenicCDR3bSequence, all_samples_beta$aaSeqCDR3), TRUE, FALSE)
 all_samples_beta$pathogenic2 <- ifelse(grepl("TRBV9|TRBV5-5|TRBV5-4", all_samples_beta$v), all_samples_beta$pathogenic1, FALSE)
 
-## turns out ID01 and ID08_2 are the same sample, merge those, just rename them ID01
-all_samples_beta$sample <- ifelse(all_samples_beta$sample %in% "IDO8_2",
-                                  "IDO1", all_samples_beta$sample)
+## turns out ID01 and ID08_2 are the same sample, remove ID01
 
 ## manually input the healthy vs. disease patients
-diagnosis <- t(data.frame(`IDO1` = "AI", # this is a duplicate of ID08_2
+diagnosis <- t(data.frame(# `IDO1` = "AI", # this is a duplicate of ID08_2
                           `IDO2` = "HC",
                           `IDO3` = "HC",
                           `IDO4` = "HC",
@@ -46,7 +44,8 @@ diagnosis <- t(data.frame(`IDO1` = "AI", # this is a duplicate of ID08_2
                           `IDO11` = "AI",
                           `IDO12` = "AI",
                           `IDO6_2` = "AI",
-                          `IDO7_2` = "HC"))
+                          `IDO7_2` = "HC",
+                          `IDO8_2` = "AI"))
 colnames(diagnosis) <- "diagnosis"
 
 all_samples_beta <- merge(all_samples_beta, diagnosis, by.x="sample", by.y="row.names")

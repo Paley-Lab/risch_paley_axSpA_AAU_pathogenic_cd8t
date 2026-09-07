@@ -19,12 +19,11 @@ paired <- rbind(paired_1, paired_2)
 paired <- paired[order(paired$method, decreasing = T),]
 paired <- paired[!duplicated(paired[, c("sample", "alpha_beta")]),]   # CORRECTED: dedup within sample
 
-## turns out ID01 and ID08_2 are the same sample, merge those, just rename them ID01
-paired$sample <- ifelse(paired$sample %in% "IDO8_2",
-                        "IDO1", paired$sample)
+
+## turns out ID01 and ID08_2 are the same sample, remove IDO1
 
 # data frame with the disease/healthy information, taken from email communications
-diagnosis <- t(data.frame(`IDO1` = "AI", # this sample is a duplicate of ID08_2
+diagnosis <- t(data.frame(#`IDO1` = "AI", # this sample is a duplicate of ID08_2
                           `IDO2` = "HC",
                           `IDO3` = "HC",
                           `IDO4` = "HC",
@@ -37,7 +36,8 @@ diagnosis <- t(data.frame(`IDO1` = "AI", # this sample is a duplicate of ID08_2
                           `IDO11` = "AI",
                           `IDO12` = "AI",
                           `IDO6_2` = "AI",
-                          `IDO7_2` = "HC"))
+                          `IDO7_2` = "HC",
+                          `IDO8_2` = "AI"))
 colnames(diagnosis) <- "diagnosis"
 
 ## Annotate likely pathogenic cells in a successive manner, starting with just CDR3b, then adding a TRBV criterion, then TRAV21
