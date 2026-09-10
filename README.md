@@ -23,7 +23,7 @@ This repository covers the analyses shown in the Main and Supplementary Figures.
 This repository contains the analysis code used to generate the results and figures in the manuscript above. Analyses include:
 
 - Custom read counting and enrichment analysis for the CDR3b saturation mutagenesis experiment (Fig. 1-- directory also contains figures from Supp. Fig. 1)
-- Analysis and Criteria 1/2/3 testing in high-throughput TCR sequencing datasets (Fig. 2-- directory also contains figures from Supp. Fig. 2)
+- Analysis and Criteria 1/2/3 testing in high-throughput TCR sequencing data (Fig. 2-- directory also contains figures from Supp. Fig. 2)
 - Analysis of the YeiH+CD8+ T cells from peripheral blood of HLA-B27+ healthy controls and axSpA/AAU patients (Fig. 3-- directory also contains figures from Supp. Fig. 3)
 - Analysis of the 4 publicly available joint, eye, and blood scRNA-seq and scTCR-seq datasets (Fig. 4-- directory also contains figures from Supp. Fig. 4)
 - Analysis of the CD8+ T cells from the gut and blood of HLA-B27+ IBD patients  (Fig. 5-- directory also contains figures from Supp. Fig. 5)
