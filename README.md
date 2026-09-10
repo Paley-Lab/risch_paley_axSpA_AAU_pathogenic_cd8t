@@ -34,8 +34,8 @@ Additionally, the pathogenic gene signature is provided as a .gmt file in this r
 ## Data availability
 
 - **Raw sequencing data:** deposited in dbGaP under accession **[TBD]**.
-- **Processed data objects** are available on Zenodo.
-  - Full processed high-throughput TCR-seq matrices (Omniscope OS-T and TIRTL-seq) for Figure 2 are available on Zenodo.
+- **Processed data objects** are available on Zenodo (doi:10.5281/zenodo.21998424).
+  - Full processed high-throughput TCR-seq matrices (TIRTL-seq) for Figure 2 are available on Zenodo.
   - For the single-cell datasets, metadata matrices needed to reproduce our filtering and annotations from the raw data are available on Zenodo.
 
 ## Contact
